@@ -36,7 +36,7 @@ namespace PracticeExercise1
         /// <summary>
         /// Returns last element in list, null if empty.
         /// </summary>
-        public int? Last { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int? Last { get => IsEmpty ? null : array[length - 1]; }
 
         /// <summary>
         /// Returns true if list is has no elements; false otherwise.
