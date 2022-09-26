@@ -17,22 +17,9 @@ namespace PracticeExercise1
         /// </summary>
         public int? First
         {
-            //get
-            //{
-            //    if (IsEmpty)
-            //    {
-            //        return null;
-            //    }
-            //    else
-            //    {
-            //        return array[0];
-            //    }
-            //}
-
             get => IsEmpty ? null : array[0];
         }
 
-        // TODO
         /// <summary>
         /// Returns last element in list, null if empty.
         /// </summary>
@@ -90,7 +77,14 @@ namespace PracticeExercise1
         /// <returns>Index of first element with value; -1 if element is not found</returns>
         public int FirstIndexOf(int value)
         {
-            throw new NotImplementedException();
+            foreach(int i in array)
+            {
+                if (i == value)
+                {
+                    return Array.IndexOf(array, value);
+                }
+            }
+            return -1;
         }
 
         // TODO
