@@ -69,7 +69,6 @@ namespace PracticeExercise1
             return false;
         }
 
-        // TODO
         /// <summary>
         /// Find index of first element with matching value.
         /// </summary>
