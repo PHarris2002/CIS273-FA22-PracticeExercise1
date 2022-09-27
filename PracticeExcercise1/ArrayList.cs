@@ -106,7 +106,23 @@ namespace PracticeExercise1
         /// <param name="index"></param>
         public void InsertAt(int value, int index)
         {
-            throw new NotImplementedException();
+            if (index > Length - 1 || index < 0)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            else
+            {
+                if (Length == array.Length)
+                {
+                    Resize();
+                }
+
+
+                array[index] = value;
+                ShiftRight(index);
+                length++;
+            };
         }
 
         /// <summary>
@@ -152,7 +168,14 @@ namespace PracticeExercise1
         /// <param name="value">value of item to be removed</param>
         public void Remove(int value)
         {
-            throw new NotImplementedException();
+            foreach(int i in array)
+            {
+                if (i == value)
+                {
+
+
+                }
+            };
         }
 
         // TODO
@@ -162,8 +185,16 @@ namespace PracticeExercise1
         /// <param name="index"></param>
         public void RemoveAt(int index)
         {
+            if(index > Length - 1 || index < 0)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            else 
+            {
             ShiftLeft(index);
             length--;
+            }
         }
 
         public override string ToString()
