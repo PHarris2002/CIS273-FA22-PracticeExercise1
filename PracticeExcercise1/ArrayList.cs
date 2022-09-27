@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+
 namespace PracticeExercise1
 {
 	public class ArrayList : IList
@@ -95,7 +97,18 @@ namespace PracticeExercise1
         /// <param name="existingValue"></param>
         public void InsertAfter(int newValue, int existingValue)
         {
-            throw new NotImplementedException();
+            int indexNewValue = FirstIndexOf(newValue);
+
+
+            if (indexNewValue == -1 || length == 0)
+            {
+                return;
+            }
+
+            else
+            {
+                return;
+            }
         }
 
         // TODO
@@ -200,17 +213,23 @@ namespace PracticeExercise1
 
         public override string ToString()
         {
-            string str = "[ ";
-
-            for(int i=0; i < Length-1; i++)
+            if (length > 0)
             {
-                str += array[i] + ", ";
+                string str = "[ ";
+
+                for (int i = 0; i < Length - 1; i++)
+                {
+                    str += array[i] + ", ";
+                }
+
+                str += array[Length - 1];
+                str += "]";
+
+                return str;
             }
 
-            str += array[Length - 1];
-            str += "]";
-
-            return str;
+            else
+                return "[]";
 
         }
 
