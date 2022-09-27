@@ -97,18 +97,23 @@ namespace PracticeExercise1
         /// <param name="existingValue"></param>
         public void InsertAfter(int newValue, int existingValue)
         {
-            int indexNewValue = FirstIndexOf(newValue);
+            int count = 0;
 
-
-            if (indexNewValue == -1 || length == 0)
+            foreach (int i in array)
             {
-                return;
+                if (i == existingValue)
+                {
+                    ShiftRight(count);
+                    array[count + 1] = newValue;
+                    length++;
+                    return;
+                }
+                count += 1;
             }
 
-            else
-            {
-                return;
-            }
+            Append(newValue);
+            return;
+
         }
 
         // TODO
