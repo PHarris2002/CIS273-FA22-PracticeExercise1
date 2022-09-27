@@ -106,7 +106,7 @@ namespace PracticeExercise1
         /// <param name="index"></param>
         public void InsertAt(int value, int index)
         {
-            if (index > Length - 1 || index < 0)
+            if (index > Length || index < 0)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -118,9 +118,8 @@ namespace PracticeExercise1
                     Resize();
                 }
 
-
-                array[index] = value;
                 ShiftRight(index);
+                array[index] = value;        
                 length++;
             };
         }
@@ -168,17 +167,19 @@ namespace PracticeExercise1
         /// <param name="value">value of item to be removed</param>
         public void Remove(int value)
         {
-            foreach(int i in array)
+            int index = FirstIndexOf(value);
+
+            if (index == -1 || length == 0)
             {
-                if (i == value)
-                {
+                return;
+            }
 
-
-                }
-            };
+            else
+            {
+                RemoveAt(index);
+            }
         }
 
-        // TODO
         /// <summary>
         /// Remove item at specififed index.
         /// </summary>
